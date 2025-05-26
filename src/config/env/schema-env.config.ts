@@ -9,10 +9,12 @@ export interface EnvVars {
 }
 
 const envSchema = Joi.object<EnvVars>({
-    NODE_ENV: Joi.string().valid('development', 'production', 'staging').default('development'),
-    PORT: Joi.number().default(3000),
-    DB_URL: Joi.string().required(),
-    API_KEY: Joi.string().required(),
+  NODE_ENV: Joi.string()
+    .valid("development", "production", "staging")
+    .default("development"),
+  PORT: Joi.number().default(3000),
+  DB_URL: Joi.string().default("postgres://user:password@localhost:5432/mydb"),
+  API_KEY: Joi.string().default('your-api-key-here'),
 }).unknown();
 
 const { value: envVars, error } = envSchema.validate(process.env, {

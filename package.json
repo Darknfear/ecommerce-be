@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "prod": "node dist/app.js",
+    "build": "tsc -p tsconfig.json",
     "dev": "nodemon"
   },
   "dependencies": {
