@@ -1,17 +1,21 @@
 {
-  "name": "ecommer",
+  "name": "ecommerce-backend",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "prod": "node dist/app.js",
+    "build": "tsc -p tsconfig.json",
     "dev": "nodemon"
   },
   "dependencies": {
     "@types/express": "^5.0.2",
-    "express": "^5.1.0"
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "joi": "^17.13.3"
   },
   "devDependencies": {
+    "@types/joi": "^17.2.3",
     "@types/node": "^22.15.19",
     "nodemon": "^3.1.10",
     "ts-node": "^10.9.2",
